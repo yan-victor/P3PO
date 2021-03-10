@@ -1,4 +1,4 @@
-//URI 1017 - Gasto de Combustível
+//URI 1012 - Área
 #include<bits/stdc++.h>
 
 using namespace std;
