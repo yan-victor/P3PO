@@ -1,0 +1,18 @@
+//URI - 1065 - 
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+	int i = 0;
+	int qnt = 0;
+	int a;
+	while(i<5) {
+		cin>>a;
+		if(a%2==0) qnt++;
+		i++;
+	}
+
+	cout<<qnt<<" valores pares\n";
+}
