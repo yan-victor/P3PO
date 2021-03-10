@@ -9,11 +9,4 @@ int main() {
 	cin>>p>>alice>>bob;
 	if((p+alice+bob)%2==0) cout<<"0\n";
 	else cout<<"1\n";
-	/*if(p==0) {
-		if((alice+bob)%2==0) cout<<"0\n";
-		else cout<<"1\n";
-	} else {
-		if((alice+bob)%2==0) cout<<"1\n";
-		else cout<<"0\n";
-	}*/
 }
