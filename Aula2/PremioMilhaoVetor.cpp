@@ -1,3 +1,5 @@
+// OBI PJ Fase 1 - 2015 - Prêmio do Milhão
+
 #include<bits/stdc++.h>
 
 using namespace std;
