@@ -4,7 +4,7 @@ using namespace std;
 
 const int N = 110;
 
-char vogal[5] = {'a','e','i','o','u'};
+char vogal[6] = {'a','e','i','o','u','y'};
 
 int main() {
 	string s;
@@ -16,7 +16,7 @@ int main() {
 			s[i] = (char)((int)s[i] + dif);
 		}
 		bool vog = 0;
-		for(int j=0;j<5;j++) {
+		for(int j=0;j<6;j++) {
 			if(vogal[j]==s[i]) {
 				vog = 1;
 			}
