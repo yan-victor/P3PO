@@ -1,3 +1,5 @@
+//CodeForces 118A - String Task
+
 #include<bits/stdc++.h>
 
 using namespace std;

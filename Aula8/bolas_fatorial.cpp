@@ -1,3 +1,5 @@
+// OBI 2018 P2 Fase 3 - Bolas O(N!N)
+
 #include<bits/stdc++.h>
 
 using namespace std;
