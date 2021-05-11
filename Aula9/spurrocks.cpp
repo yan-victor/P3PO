@@ -1,3 +1,5 @@
+// IX Maratona de Programação IME-USP, 2005 - Spur Rocks
+
 #include<bits/stdc++.h>
 
 using namespace std;
