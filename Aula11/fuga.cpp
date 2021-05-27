@@ -1,3 +1,5 @@
+//OBI 2017 Fase 2 P2 - Fuga
+
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -34,8 +36,8 @@ void f(int x,int y,int qnt=0) {
 
 int main() {
 	int xinicial,yinicial;
-	cin>>n>>xinicial>>yinicial>>xfinal>>yfinal;
+	cin>>n>>m>>xinicial>>yinicial>>xfinal>>yfinal;
 	visitado[xinicial][yinicial]=1;
 	f(xinicial,yinicial);
-	cout<<resp<<"\n";
+	cout<<2*resp+1<<"\n";
 }

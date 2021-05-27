@@ -1,3 +1,5 @@
+//OBI 2017 PJ Fase 3 - Gomoku
+
 #include<bits/stdc++.h>
 
 using namespace std;
