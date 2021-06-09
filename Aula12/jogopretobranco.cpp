@@ -1,3 +1,5 @@
+//OBI 2020 P2 Fase 3 - Jogo do preto e branco
+
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -23,16 +25,20 @@ int l,c;
 pii deslinearizar(int x) {
 	int linhas = x/c;
 	int colunas = x - linhas*c;
-	linhas++;
+	if(x%c) linhas++;
 	if(colunas==0) colunas = c;
 	return {linhas,colunas};
 }
 
 void f(int x,int resp) {
-	if(x==l*c) saida=max(saida,resp);
+	if(x==l*c+1) {
+		saida=max(saida,resp);
+		return;
+	}
 	pii aux = deslinearizar(x);
 	int i = aux.F;
 	int j = aux.S;
+	//cout<<i<<" "<<j<<" "<<resp<<"\n";
 	if(ocupado[i][j]) f(x+1,resp);
 	else {
 		int branco=0,preto=0;
@@ -48,7 +54,7 @@ void f(int x,int resp) {
 			f(x+1,resp+1);
 			ocupado[i][j]=0;
 			f(x+1,resp);
-		}
+		} else f(x+1,resp);
 	}
 }
 
