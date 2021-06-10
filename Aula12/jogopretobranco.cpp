@@ -68,3 +68,10 @@ int main() {
 	f(1,0);
 	cout<<saida<<"\n";
 }
+
+
+
+{[[]]}
+
+
+pilha:
