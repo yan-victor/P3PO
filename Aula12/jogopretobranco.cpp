@@ -69,9 +69,3 @@ int main() {
 	cout<<saida<<"\n";
 }
 
-
-
-{[[]]}
-
-
-pilha:
