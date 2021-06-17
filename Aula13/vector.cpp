@@ -1,4 +1,7 @@
+//vector
+
 #include<bits/stdc++.h>
+//#include<vector> nao necessario com a bits
 
 using namespace std;
 

@@ -1,3 +1,5 @@
+//OBI 2010 P1 Fase 1 - Copa do Mundo
+
 #include<bits/stdc++.h>
 
 using namespace std;
