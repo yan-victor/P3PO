@@ -13,9 +13,6 @@ int dirj[4] = {0,0,1,-1};
 int saida = 0;
 
 int ocupado[10][10]; 
-//0 - vazio
-//1 - preta
-//2 - branca
 
 int linearizar(int l,int c) {
 	return (l-1)*c+c;
