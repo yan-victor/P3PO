@@ -5,7 +5,7 @@
 4       0   
 5 3       0 
 
-bool matrfiz[N][N]; 
+bool matriz[N][N]; 
 map< tipo1, tipo2 >
 map< pair<int,int>, int> pontes;
 
@@ -19,6 +19,8 @@ O(MlogM)
 2^10 = 1000 = 10^3
 10^6 = 2^20
 */
+
+//Neps - Tá Ligado?
 
 #include<bits/stdc++.h>
 

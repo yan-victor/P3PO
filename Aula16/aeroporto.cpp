@@ -1,3 +1,5 @@
+//OBI 2002 - Fase única
+
 #include<bits/stdc++.h>
 
 using namespace std;
