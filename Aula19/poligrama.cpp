@@ -1,3 +1,5 @@
+//OBI 2021 P2 - Fase 2
+
 //N possui O(logN) divisores
 
 //N = p1^(x1)*p2^(x2)*...*
