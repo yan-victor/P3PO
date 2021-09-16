@@ -47,7 +47,7 @@ int main() {
 		for(int i=1;i<=n;i++) {
 			total += bb(i,soma/2,i+1,i+n-1);
 		}
-		if(total>=4) cout<<"Y\n";
+		if(soma%2==0&&total>=4) cout<<"Y\n";
 		else cout<<"N\n";
 	}
 }

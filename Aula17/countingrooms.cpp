@@ -43,6 +43,7 @@ void bfs(int x,int y) {
 		}
 	}
 }
+//O(V+E)
 
 void dfs(int x,int y) {
 	visitado[x][y] = 1;
@@ -54,6 +55,7 @@ void dfs(int x,int y) {
 		}
 	}
 }
+//O(V+E)
 
 int main() {
 	ios::sync_with_stdio(false);
