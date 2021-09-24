@@ -23,7 +23,7 @@ int main() {
 	T=1;
 	for(int t=0;t<T;t++) {
 		cin>>n>>m>>c>>k;
-		do 
+		while(n!=0) 
 		{
 			memset(dis,INF,sizeof(dis));
 			for(int i=0;i<m;i++) {
@@ -40,18 +40,21 @@ int main() {
 				}
 			}
 
-			for(int l=0;l<n;l++) {
+			for(int l=c;l<n;l++) {
 				for(int i=0;i<n;i++) {
-					for(int j=i+1;j<n;j++) {
-						if(i<c&&j<c) continue;
+					for(int j=0;j<n;j++) {
+						if(i<c) continue;
 						if(dis[i][j]>dis[i][l]+dis[l][j]) {
-							dis[i][j] = dis[j][i] = dis[i][l]+dis[l][j];
+							dis[i][j] = dis[i][l]+dis[l][j];
 						}
 					}
 				}
 			}
-			cout<<dis[k][c-1]<<"\n";
+			int ans = dis[k][c-1];
+			for(int i=0;i<c-1;i++)
+				ans=min(dis[k][i]+dis[i][c-1],ans);
+			cout<<ans<<"\n";
 			cin>>n>>m>>c>>k;
-		} while(n!=0);
+		} 
 	}
 }
