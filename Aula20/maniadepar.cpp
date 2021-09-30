@@ -1,3 +1,5 @@
+//XX Maratona de Programação da SBC 2015 - Mania de Par
+
 #include<bits/stdc++.h>
 
 using namespace std;

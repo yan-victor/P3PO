@@ -7,6 +7,8 @@ MA >= MG
 ((k-n)+(n))/2 >= sqrt(((k-n)*n))
 k/2 >= sqrt(P) -> P <= (k/2)^2*/
 
+//Neps - Febre de Recursões
+
 #include<bits/stdc++.h>
 
 using namespace std;
