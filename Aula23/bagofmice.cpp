@@ -1,3 +1,5 @@
+//Codeforces 148D - Bag of mice
+
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -15,13 +17,13 @@ const ll mod = 1000000007;
 double dp[N][N][2];
 int v[N];
 
-int f(int w,int b,int p) {
+double f(int w,int b,int p) {
 	if(w==0) return 0.0;
 	if(b<0) return 1.0;
 	if(dp[w][b][p]>-1.0) return dp[w][b][p];
 	if(p==0) {
 		if(b==0) return 1.0;
-		dp[w][b][p] = ((double)w/(double)(w+b))+((double)b*f(w,b-1,1)/(double)(w+b));
+		dp[w][b][p] = ((double)w/(double)(w+b))+(((double)b)*f(w,b-1,1)/(double)(w+b));
 	} else {
 		if(b==0) return 0.0;
 		dp[w][b][p] = ((double)b/(double)(w+b))*(((double)w*f(w-1,b-1,0)/(double)(w+b-1))+((double)(b-1)*f(w,b-2,0)/(double)(w+b-1)));
@@ -44,6 +46,8 @@ int main() {
 				dp[i][j][1] = -1.0;
 			}
 		}
+		cout.precision(10);
+		cout.setf(ios::fixed);
 		cout<<f(w,b,0)<<"\n";
 	}
 }

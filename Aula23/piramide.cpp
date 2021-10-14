@@ -1,3 +1,5 @@
+//OBI 2018 P1 Fase 1 - Pirâmide
+
 #include<bits/stdc++.h>
 
 using namespace std;

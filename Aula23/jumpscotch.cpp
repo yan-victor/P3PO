@@ -1,3 +1,5 @@
+//SMAC 08/09 (Oct) #3 - Jumpscotch
+
 #include<bits/stdc++.h>
 
 using namespace std;

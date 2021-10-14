@@ -1,3 +1,5 @@
+//OBI 2010 P2 Fase 2 - Tradutor Alienígena
+
 #include<bits/stdc++.h>
 
 using namespace std;
