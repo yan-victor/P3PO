@@ -1,0 +1,59 @@
+binary indexed tree (BIT) ou fenwick tree
+
+-> Atualizações em uma posição do vetor em O(log2N)
+-> Consultas em intervalos do vetor em O(log2N)
+
+-> Funções que sejam associativas -> f(a,f(b,c)) = f(f(a,b),c) ex:
+a+(b+c) = (a+b)+c
+-> Função possua uma função inversa Ex: a+b = c -> a = c-b
+
+
+-x = nega todos os bits de x e soma 1 (Complemento de 2)
+
+0000
+0000
+
+0001
+
+1111
+
+(_) _ _ _
+
+int 32 bits -> -2^31 a 2^31-1
+unsigned int 32 bits -> 0 a 2^32-1
+
+BIT[i] = soma de todos os elementos de i até i-(1<<r)+1 
+r = LSB de i = Least significant bit = bit menos significativo 
+LSB = bit 1 mais a direita
+
+
+1100 LSB(12) = 2
+
+
+1110...1 LSB = 0 -> BIT[i] = i até i-(1<<r)+1 = i-1+1 = i
+1111..10 LSB = 1 -> BIT[i] = i até i-(1<<r)+1 = i-2+1 = i-1
+.......
+(1<<i) 100000 LSB = i -> BIT[(1<<i)] = (1<<i) até (i<<i) - (1<<i) + 1 = soma de todo mundo até 1
+
+
+
+10: 01010     
+12: 01100
+16: 10000
+update: x+=x&-x
+BIT[x] += valor
+
+O(log2N)
+
+x = aaaaaaaa10000
+-x = '(aaaaaa)10000
+x&-x = 000000100000
+
+query(k):
+BIT[k] = k até k-(1<<r)+1
+query(k) = BIT[k]+query(k-(1<<r))
+
+O(log2N)
+aaaaa1000
+-00001000
+aaaaa0000
