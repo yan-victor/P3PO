@@ -31,34 +31,36 @@ void build(int x,int l,int r) {
 } //O(NlogN)
 
 void refresh(int x,int l,int r) {
-	cout<<"entrei\n";
+	if(lazy[x]==0) return;
 	tree[x]+=(r-l+1)*lazy[x];
-	lazy[fe]=lazy[fd]=lazy[x];
+	if(l!=r) lazy[fd]+=lazy[x];
+	if(l!=r) lazy[fe]+=lazy[x];
 	lazy[x]=0;
-	cout<<"sai\n";
 }
 
 void update(int x,int l,int r,int ul,int ur,int val) {
+	refresh(x,l,r);
 	if(ul<=l&&r<=ur) {
 		lazy[x] += val;
+		refresh(x,l,r);
+		return;
 	}
 	if(r<ul||ur<l) return;
-	refresh(x,l,r);
 	update(fe,l,mid,ul,ur,val);
 	update(fd,mid+1,r,ul,ur,val);
 	tree[x] = tree[fe]+tree[fd];
 } //O(logN)
 
 int query(int x,int l,int r,int ql,int qr) {
+	if(r<ql||qr<l) return 0;
 	refresh(x,l,r);
 	if(ql<=l&&r<=qr) return tree[x];
-	if(r<ql||qr<l) return 0;
 	return query(fe,l,mid,ql,qr)+query(fd,mid+1,r,ql,qr);
-}
+} //O(logN)
 
 int32_t main() {
-	//ios::sync_with_stdio(false);
-	//cin.tie(0);
+	ios::sync_with_stdio(false);
+	cin.tie(0);
 
 	int T,n,m;
 	cin>>T;
@@ -67,17 +69,15 @@ int32_t main() {
 		cin>>n>>m;
 		memset(tree,0,sizeof(tree));
 		memset(lazy,0,sizeof(lazy));
-		//cout<<"oi1\n";
-		build(0,0,n-1);
+
 		for(int i=0;i<m;i++) {
-				//cout<<"oi"<<i<<'\n';
 			int op,a,b,val;
 			cin>>op>>a>>b;
 			if(op==0) {
 				cin>>val;
-				update(0,0,n-1,a,b,val);
+				update(0,0,n-1,a-1,b-1,val);
 			} else {
-				cout<<query(0,0,n-1,a,b-1)<<"\n";
+				cout<<query(0,0,n-1,a-1,b-1)<<"\n";
 			}
 		}
 	}
