@@ -19,7 +19,6 @@ int n;
 void upd(int x,int val) {
 	for(;x<=n;x+=x&-x) {
 		BIT[x] += val;
-		//cout<<x<<" "<<val<<"\n";
 	}
 }
 
