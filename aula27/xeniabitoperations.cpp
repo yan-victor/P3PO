@@ -28,16 +28,6 @@ void build(int x,int l,int r,int op=0) {
 	tree[x] = op==0 ? tree[fe]|tree[fd] : tree[fe]^tree[fd];
 } //O(NlogN)
 
-bool buildCerto(int x,int l,int r,int op=0) {
-	if(l==r) return true;
-	int resp = buildCerto(fe,l,mid,1-op);
-	resp &= buildCerto(fd,mid+1,r,1-op);
-	if(r-l+1==2) {
-		return (op==0);
-	}
-	return resp;
-} 
-
 void update(int x,int l,int r,int pos,int val,int op) {
 	if(l==r) {
 		tree[x] = val;
@@ -48,12 +38,6 @@ void update(int x,int l,int r,int pos,int val,int op) {
 	tree[x] = op==0 ? tree[fe]|tree[fd] : tree[fe]^tree[fd];
 } //O(logN)
 
-int query(int x,int l,int r,int ql,int qr,int op=0) {
-	if(ql<=l&&r<=qr) return tree[x];
-	if(r<ql||qr<l) return INF;
-	return op==0 ? query(fe,l,mid,ql,qr,1-op)|query(fd,mid+1,r,ql,qr,1-op) : query(fe,l,mid,ql,qr,1-op)^query(fd,mid+1,r,ql,qr,1-op);
-}
-
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
@@ -63,16 +47,16 @@ int main() {
 	T=1;
 	for(int t=0;t<T;t++) {
 		cin>>n>>m;
-		for(int i=0;i<n;i++) {
+		for(int i=0;i<(1<<n);i++) {
 			cin>>v[i];
 		}
-		int op = buildCerto(0,0,n-1,0);
-		build(0,0,n-1,op);
+		int op = (n+1)%2;
+		build(0,0,(1<<n)-1,op);
 		for(int i=0;i<m;i++) {
 			int p,b;
 			cin>>p>>b;
-			update(0,0,n-1,p-1,b,op);
-			cout<<query(0,0,n-1,0,n-1,op)<<"\n";
+			update(0,0,(1<<n)-1,p-1,b,op);
+			cout<<tree[0]<<"\n";
 		}
 	}
 }
