@@ -52,7 +52,7 @@ void update(int x,int l,int r,int pos,int val) {
 
 int query(int x,int l,int r,int ql,int qr) {
 	if(ql<=l&&r<=qr) return tree[x];
-	if(r<ql||qr<l) return INF;
+	if(r<ql||qr<l) return 1;
 	return query(fe,l,mid,ql,qr)*query(fd,mid+1,r,ql,qr);
 }
 
